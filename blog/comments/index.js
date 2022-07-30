@@ -24,7 +24,7 @@ app.post("/posts/:id/comments", async (req, res) => {
   const comments = commentsByPostId[req.params.id] || [];
   comments.push({ id: commentId, content, status: "pending" });
   commentsByPostId[req.params.id] = comments;
-
+  console.log(new Date(), content);
   await axios
     .post("http://event-bus-srv:4005/events", {
       type: "CommentCreated",
@@ -67,5 +67,5 @@ app.post("/events", async (req, res) => {
 });
 
 app.listen(4001, () => {
-  console.log("Listening on 4001");
+  console.log("Listening on the hill 4001");
 });

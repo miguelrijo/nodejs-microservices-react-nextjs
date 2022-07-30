@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.post("/events", async (req, res) => {
   const { type, data } = req.body;
-
+  console.log(new Date(), type, data);
   if (type === "CommentCreated") {
     const status = data.content.includes("orange") ? "rejected" : "approved";
 
@@ -21,5 +21,5 @@ app.post("/events", async (req, res) => {
 });
 
 app.listen(4003, () => {
-  console.log("Running on 4003");
+  console.log("Running on the hill 4003");
 });

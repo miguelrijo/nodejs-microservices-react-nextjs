@@ -10,11 +10,11 @@ app.use(cors());
 
 const posts = {};
 
-app.get("/posts", (req, res) => {
+app.get("/posts/create", (req, res) => {
   res.status(201).send(posts);
 });
 
-app.post("/posts", async (req, res) => {
+app.post("/posts/create", async (req, res) => {
   const id = randomBytes(4).toString("hex");
   const { title } = req.body;
   posts[id] = {
@@ -40,6 +40,6 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log("v55 --------YAML--------");
+  console.log("v55 --------YAML---888-----");
   console.log("Listining on 4000");
 });

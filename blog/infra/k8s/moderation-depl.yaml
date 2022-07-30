@@ -22,7 +22,7 @@ metadata:
   name: moderation-clusterip-srv
 spec:
   selector:
-    app: posts
+    app: moderation
   ports:
     - name: moderation
       port: 4003

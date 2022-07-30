@@ -15,6 +15,7 @@ app.get("/posts", (req, res) => {
 
 app.post("/events", (req, resp) => {
   const { type, data } = req.body;
+  console.log("Received events ", data, type);
   processEvents(data, type);
   resp.status(200).send(posts);
 });
@@ -47,7 +48,7 @@ app.listen("4002", async () => {
     .catch((e) => console.log(e));
   console.log(res.data);
   for (let event of res.data) {
-    console.log("processing ", event.type, event);
+    console.log("processing old data", event.type, event);
     processEvents(event.data, event.type);
   }
 });
